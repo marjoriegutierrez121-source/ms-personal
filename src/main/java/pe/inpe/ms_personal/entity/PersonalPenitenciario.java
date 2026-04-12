@@ -1,21 +1,18 @@
 package pe.inpe.ms_personal.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
-import pe.inpe.ms_personal.Util.AudithModel;
+import pe.inpe.ms_personal.Util.auditoria.AuditModel;
 
 @Entity
 @Table(name = "personal_penitenciario")
-@Data
-@SuperBuilder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class PersonalPenitenciario extends AudithModel {
+public class PersonalPenitenciario extends AuditModel {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

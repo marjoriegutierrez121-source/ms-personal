@@ -33,11 +33,6 @@ public class PersonalServiceImpl implements PersonalService {
 
         PersonalPenitenciario personal= personalMapper.toEntity(request);
         personal.setEstado(true);
-        personal.setRegistrationDate(LocalDateTime.now());
-        personal.setRegistrationUser("SYSTEM");
-        personal.setLastModificationDate(LocalDateTime.now());
-        personal.setLastModificationUser("SYSTEM");
-
         PersonalPenitenciario saved = personalRepository.save(personal);
         log.info("Personal creado con ID: {}", saved.getIdPersonal());
 
